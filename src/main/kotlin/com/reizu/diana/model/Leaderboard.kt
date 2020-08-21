@@ -1,8 +1,11 @@
 package com.reizu.diana.model
 
+import com.fasterxml.jackson.annotation.JsonProperty
+
 data class Leaderboard(
 
-    val weblink: String,
+    @JsonProperty("weblink")
+    val webLink: String,
 
     val game: String,
 

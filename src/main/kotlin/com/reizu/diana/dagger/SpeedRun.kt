@@ -8,5 +8,5 @@ fun main() {
     val speedRunComApiClient: SpeedRunComApiClient = DaggerSpeedRunComApiClient.create()
     val speedRunComClient: SpeedRunComClient = speedRunComApiClient.generate()
     val gameId = "sms"
-    println(speedRunComClient.getGame(gameId))
+    println(speedRunComClient.getGameCategories(gameId))
 }

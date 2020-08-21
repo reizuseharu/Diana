@@ -1,17 +1,18 @@
-package com.reizu.diana.client
+package com.reizu.diana.dagger
 
+import com.reizu.diana.client.SpeedRunComClient
+import com.reizu.diana.client.SpeedRunComService
 import com.reizu.diana.utility.Resource
 import dagger.Module
 import dagger.Provides
 import okhttp3.HttpUrl
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.jackson.JacksonConverterFactory
 import javax.inject.Singleton
 
 @Module(includes = [ClientConfigModule::class])
-class RxSpeedRunComApiModule {
+class SpeedRunComApiModule {
 
     @Provides
     @Singleton
@@ -19,21 +20,20 @@ class RxSpeedRunComApiModule {
         return Retrofit.Builder()
             .baseUrl(rootUrl)
             .addConverterFactory(JacksonConverterFactory.create(Resource.OBJECT_MAPPER))
-            .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
             .client(client)
             .build()
     }
 
     @Provides
     @Singleton
-    fun provideService(retrofit: Retrofit): RxSpeedRunComService {
-        return retrofit.create(RxSpeedRunComService::class.java)
+    fun provideService(retrofit: Retrofit): SpeedRunComService {
+        return retrofit.create(SpeedRunComService::class.java)
     }
 
     @Provides
     @Singleton
-    fun provideSpeedRunComClient(service: RxSpeedRunComService): RxSpeedRunComClient {
-        return RxSpeedRunComClient(service)
+    fun provideSpeedRunComClient(service: SpeedRunComService): SpeedRunComClient {
+        return SpeedRunComClient(service)
     }
 
 

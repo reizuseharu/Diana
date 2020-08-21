@@ -1,12 +1,13 @@
-package com.reizu.diana.client
+package com.reizu.diana.dagger
 
-import com.reizu.diana.utility.Constants as c
+import com.reizu.diana.client.ClientConfig
 import dagger.Module
 import dagger.Provides
-import java.util.concurrent.TimeUnit
 import okhttp3.HttpUrl
 import okhttp3.OkHttpClient
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
+import com.reizu.diana.utility.Constants as c
 
 @Module
 class ClientConfigModule : ClientConfig {

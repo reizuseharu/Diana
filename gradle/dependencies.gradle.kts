@@ -58,7 +58,8 @@ val packages: Array<Package> = arrayOf(
     Package("com.squareup.retrofit2", "converter-jackson", "2.9.0"),
     Package("com.squareup.retrofit2", "adapter-rxjava", "2.9.0"),
     Package("com.google.dagger", "dagger", "2.28"),
-    Package("com.google.dagger", "dagger-compiler", "2.28")
+    Package("com.google.dagger", "dagger-compiler", "2.28"),
+    Package("com.google.code.gson",  "gson",  "2.8.6")
 )
 
 val testPackages: Array<Package> = arrayOf(

@@ -1,5 +1,6 @@
 package com.reizu.diana.client
 
+import com.reizu.diana.dagger.SpeedRunComApiModule
 import dagger.Component
 import javax.inject.Singleton
 
