@@ -172,6 +172,12 @@ interface SpeedRunComService {
     @GET("users")
     fun getUsers(): Call<ApiResourceList<User>>
 
+    @GET("users")
+    fun getUsers(@Query("offset") offset: Int, @Query("max") max: Int): Call<ApiResourceList<User>>
+
+    @GET("users")
+    fun getUsers(@Query("offset") offset: Int, @Query("max") max: Int, @Query("name") partialName: String): Call<ApiResourceList<User>>
+
     @GET("users/{id}")
     fun getUser(@Path("id") id: String): Call<ApiResource<User>>
 

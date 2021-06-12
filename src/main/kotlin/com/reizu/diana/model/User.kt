@@ -13,6 +13,8 @@ data class User(
 
     val names: Name,
 
+    val pronouns: String?,
+
     @JsonProperty("weblink")
     val webLink: String,
 
@@ -25,18 +27,18 @@ data class User(
     @JsonSerialize(using = LocalDateTimeSerializer::class)
     val signup: LocalDateTime,
 
-    val location: Location,
+    val location: Location?,
 
-    val twitch: SocialLink,
+    val twitch: SocialLink?,
 
-    val hitbox: SocialLink,
+    val hitbox: SocialLink?,
 
-    val youtube: SocialLink,
+    val youtube: SocialLink?,
 
-    val twitter: SocialLink,
+    val twitter: SocialLink?,
 
-    val speedrunslive: SocialLink,
+    val speedrunslive: SocialLink?,
 
-    override val links: List<Link>
+    override val links: List<Link> = listOf()
 
 ): Resourceable

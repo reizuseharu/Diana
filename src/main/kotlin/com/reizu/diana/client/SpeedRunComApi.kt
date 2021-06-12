@@ -118,6 +118,10 @@ interface SpeedRunComApi {
 
     fun getUsers(): ApiResourceList<User>
 
+    fun getUsers(offset: Int, max: Int): ApiResourceList<User>
+
+    fun getUsers(offset: Int, max: Int, partialName: String): ApiResourceList<User>
+
     fun getUser(id: String): ApiResource<User>
 
     fun getUserPersonalBests(id: String): ApiResource<PersonalBest>
