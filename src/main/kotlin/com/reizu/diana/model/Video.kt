@@ -2,8 +2,8 @@ package com.reizu.diana.model
 
 data class Video(
 
-    val text: String,
+    val text: String?,
 
-    override val links: List<Link>
+    override val links: List<Link> = listOf()
 
 ): Linkable

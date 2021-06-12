@@ -11,7 +11,7 @@ data class Series(
 
     override val id: String,
 
-    val names: GameName,
+    val names: Name,
 
     val abbreviation: String,
 

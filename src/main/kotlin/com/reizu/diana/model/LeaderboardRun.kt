@@ -4,6 +4,6 @@ data class LeaderboardRun(
 
     val place: Int,
 
-    val name: String
+    val run: Run
 
 )

@@ -37,6 +37,8 @@ val jUnitPackages: Array<Package> = arrayOf(
     Package("org.junit.jupiter", "junit-jupiter-engine", junitVersion),
 
     Package("io.mockk", "mockk", "1.8.13"),
+    Package("com.nhaarman.mockitokotlin2", "mockito-kotlin", "2.2.0"),
+    Package("org.mockito", "mockito-junit-jupiter", "3.5.2"),
     Package("org.amshove.kluent", "kluent", "1.49")
 )
 

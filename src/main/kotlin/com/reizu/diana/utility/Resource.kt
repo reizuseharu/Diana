@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 
 object Resource {
+
     val OBJECT_MAPPER: ObjectMapper
         get() {
             val objectMapper = jacksonObjectMapper()
@@ -12,4 +13,5 @@ object Resource {
 
             return objectMapper
         }
+
 }

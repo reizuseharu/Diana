@@ -5,9 +5,11 @@ import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import com.fasterxml.jackson.databind.annotation.JsonSerialize
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer
-import com.google.gson.JsonObject
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 data class Run(
 
@@ -24,29 +26,31 @@ data class Run(
 
     val videos: Video,
 
-    val comment: String,
+    val comment: String?,
 
     val status: RunStatus,
 
-    val players: List<User>,
+    val players: List<Player>,
 
     @JsonDeserialize(using = LocalDateDeserializer::class)
     @JsonSerialize(using = LocalDateSerializer::class)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     val date: LocalDate?,
 
-    val submitted: Boolean?,
+    @JsonDeserialize(using = LocalDateTimeDeserializer::class)
+    @JsonSerialize(using = LocalDateTimeSerializer::class)
+    val submitted: LocalDateTime?,
 
-    val times: JsonObject,
+    val times: RunTime,
 
     val system: System,
 
-    val splits: Link,
+    val splits: Link?,
 
     val values: Map<String, String>,
 
     val released: Int,
 
-    override val links: List<Link>
+    override val links: List<Link> = listOf()
 
 ): Resourceable

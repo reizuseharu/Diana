@@ -21,16 +21,10 @@ import com.reizu.diana.model.RunStatus
 import com.reizu.diana.model.Series
 import com.reizu.diana.model.User
 import com.reizu.diana.model.Variable
-import retrofit2.Call
+import com.reizu.diana.utility.result
 import javax.inject.Inject
 
 class SpeedRunComClient @Inject constructor(private val service: SpeedRunComService) : SpeedRunComApi {
-
-    private fun <T> Call<T>.result(): T {
-        return execute().let {
-            if (it.isSuccessful) it.body()!! else throw ErrorResponse(it.code(), it.message())
-        }
-    }
 
     override fun getCategory(id: String): ApiResource<Category> {
         return service.getCategory(id).result()

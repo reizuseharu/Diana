@@ -88,16 +88,16 @@ interface SpeedRunComService {
     fun getGenres(): Call<ApiResourceList<Genre>>
 
     @GET("genres/{id}")
-    fun getGenre(id: String): Call<ApiResource<Genre>>
+    fun getGenre(@Path("id") id: String): Call<ApiResource<Genre>>
 
     @GET("guests/{name}")
-    fun getGuest(name: String): Call<ApiResource<Guest>>
+    fun getGuest(@Path("name") name: String): Call<ApiResource<Guest>>
 
     @GET("leaderboards/{game}/category/{category}")
-    fun getLeaderboardByGameAndCategory(game: String, category: String): Call<ApiResource<Leaderboard>>
+    fun getLeaderboardByGameAndCategory(@Path("game") game: String, @Path("category") category: String): Call<ApiResource<Leaderboard>>
 
     @GET("leaderboards/{game}/level/{level}/{category}")
-    fun getLeaderboardByGameAndLevelAndCategory(game: String, level: String, category: String): Call<ApiResource<Leaderboard>>
+    fun getLeaderboardByGameAndLevelAndCategory(@Path("game") game: String, @Path("level") level: String, @Path("category") category: String): Call<ApiResource<Leaderboard>>
 
     @GET("levels/{id}")
     fun getLevel(@Path("id") id: String): Call<ApiResource<Level>>

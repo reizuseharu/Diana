@@ -5,20 +5,19 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import com.fasterxml.jackson.databind.annotation.JsonSerialize
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer
-import com.google.gson.JsonObject
 import java.time.LocalDateTime
 
 data class User(
 
     override val id: String,
 
-    val names: JsonObject,
+    val names: Name,
 
     @JsonProperty("weblink")
     val webLink: String,
 
     @JsonProperty("name-style")
-    val nameStyle: JsonObject,
+    val nameStyle: NameStyle,
 
     val role: String,
 
@@ -26,7 +25,7 @@ data class User(
     @JsonSerialize(using = LocalDateTimeSerializer::class)
     val signup: LocalDateTime,
 
-    val location: JsonObject,
+    val location: Location,
 
     val twitch: SocialLink,
 

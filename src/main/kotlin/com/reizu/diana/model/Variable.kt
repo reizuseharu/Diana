@@ -1,8 +1,6 @@
 package com.reizu.diana.model
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.google.gson.JsonObject
-
 
 data class Variable(
 
@@ -12,7 +10,7 @@ data class Variable(
 
     val category: String?,
 
-    val scope: JsonObject, // val type: String
+    val scope: Scope,
 
     val mandatory: Boolean,
 
@@ -21,7 +19,7 @@ data class Variable(
 
     val obsoletes: Boolean,
 
-    val values: JsonObject, // Big Object
+    val values: Value,
 
     @JsonProperty("is-subcategory")
     val isSubcategory: Boolean,

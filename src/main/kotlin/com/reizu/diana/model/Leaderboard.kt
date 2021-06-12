@@ -23,11 +23,9 @@ data class Leaderboard(
 
     val timing: String,
 
-    val values: Map<String, Any>,
+    val values: Map<String, String>,
 
     val runs: List<LeaderboardRun>,
-
-    val name: String,
 
     override val links: List<Link>
 

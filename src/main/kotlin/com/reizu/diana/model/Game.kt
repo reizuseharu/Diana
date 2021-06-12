@@ -15,7 +15,7 @@ data class Game(
 
     override val id: String,
 
-    val names: GameName,
+    val names: Name,
 
     val abbreviation: String,
 
