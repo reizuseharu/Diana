@@ -46,19 +46,19 @@ interface SpeedRunComService {
     @GET("categories/{id}/records")
     fun getCategoryRecords(@Path("id") id: String): Call<ApiResourceList<Leaderboard>>
 
-    @GET("developers/")
+    @GET("developers")
     fun getDevelopers(): Call<ApiResourceList<Developer>>
 
     @GET("developers/{id}")
     fun getDeveloper(@Path("id") id: String): Call<ApiResource<Developer>>
 
-    @GET("engines/")
+    @GET("engines")
     fun getEngines(): Call<ApiResourceList<Engine>>
 
     @GET("engines/{id}")
     fun getEngine(@Path("id") id: String): Call<ApiResource<Engine>>
 
-    @GET("games/")
+    @GET("games")
     fun getGames(): Call<ApiResourceList<Game>>
 
     @GET("games/{id}")
@@ -79,13 +79,13 @@ interface SpeedRunComService {
     @GET("games/{id}/records")
     fun getGameRecords(@Path("id") id: String): Call<ApiResourceList<Leaderboard>>
 
-    @GET("gametypes/")
+    @GET("gametypes")
     fun getGameTypes(): Call<ApiResourceList<GameType>>
 
     @GET("gametypes/{id}")
     fun getGameType(@Path("id") id: String): Call<ApiResource<GameType>>
 
-    @GET("genres/")
+    @GET("genres")
     fun getGenres(): Call<ApiResourceList<Genre>>
 
     @GET("genres/{id}")
@@ -112,31 +112,34 @@ interface SpeedRunComService {
     @GET("levels/{id}/leaderboards")
     fun getLevelRecords(@Path("id") id: String): Call<ApiResourceList<Leaderboard>>
 
-    @GET("notifications/")
+    @GET("notifications")
     fun getNotifications(): Call<ApiResourceList<Notification>>
 
-    @GET("platforms/")
+    @GET("platforms")
     fun getPlatforms(): Call<ApiResourceList<Platform>>
+
+    @GET("platforms")
+    fun getPlatforms(@Query("offset") offset: Int, @Query("max") max: Int): Call<ApiResourceList<Platform>>
 
     @GET("platforms/{id}")
     fun getPlatform(@Path("id") id: String): Call<ApiResource<Platform>>
 
-    @GET("profile/")
+    @GET("profile")
     fun getProfile(): Call<ApiResource<User>>
 
-    @GET("publishers/")
+    @GET("publishers")
     fun getPublishers(): Call<ApiResourceList<Publisher>>
 
     @GET("publishers/{id}")
     fun getPublisher(@Path("id") id: String): Call<ApiResource<Publisher>>
 
-    @GET("regions/")
+    @GET("regions")
     fun getRegions(): Call<ApiResourceList<Region>>
 
     @GET("regions/{id}")
     fun getRegion(@Path("id") id: String): Call<ApiResource<Region>>
 
-    @GET("runs/")
+    @GET("runs")
     fun getRuns(): Call<ApiResourceList<Run>>
 
     @GET("runs")
@@ -145,7 +148,7 @@ interface SpeedRunComService {
     @GET("runs/{id}")
     fun getRun(@Path("id") id: String): Call<ApiResource<Run>>
 
-    @POST("runs/")
+    @POST("runs")
     fun createRun(run: Run): Call<ApiResource<Run>>
 
     @PUT("runs/{id}/status")
@@ -157,7 +160,7 @@ interface SpeedRunComService {
     @DELETE("runs/{id}")
     fun removeRun(@Path("id") id: String): Call<ApiResource<Run>>
 
-    @GET("series/")
+    @GET("series")
     fun getSeries(): Call<ApiResourceList<Series>>
 
     @GET("series/{id}")
@@ -166,7 +169,7 @@ interface SpeedRunComService {
     @GET("series/{id}/games")
     fun getSeriesGames(@Path("id") id: String): Call<ApiResourceList<Game>>
 
-    @GET("users/")
+    @GET("users")
     fun getUsers(): Call<ApiResourceList<User>>
 
     @GET("users/{id}")

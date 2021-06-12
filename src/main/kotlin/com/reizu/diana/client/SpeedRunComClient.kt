@@ -134,6 +134,10 @@ class SpeedRunComClient @Inject constructor(private val service: SpeedRunComServ
         return service.getPlatforms().result()
     }
 
+    override fun getPlatforms(offset: Int, max: Int): ApiResourceList<Platform> {
+        return service.getPlatforms(offset, max).result()
+    }
+
     override fun getPlatform(id: String): ApiResource<Platform> {
         return service.getPlatform(id).result()
     }

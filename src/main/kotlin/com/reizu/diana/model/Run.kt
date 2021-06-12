@@ -43,7 +43,7 @@ data class Run(
 
     val times: RunTime,
 
-    val system: System,
+    val system: GameSystem,
 
     val splits: Link?,
 

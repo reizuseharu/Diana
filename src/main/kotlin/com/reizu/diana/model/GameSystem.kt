@@ -1,6 +1,6 @@
 package com.reizu.diana.model
 
-data class System(
+data class GameSystem(
 
     val platform: String,
 

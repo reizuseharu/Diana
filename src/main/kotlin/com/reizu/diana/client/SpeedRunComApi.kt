@@ -82,6 +82,8 @@ interface SpeedRunComApi {
 
     fun getPlatforms(): ApiResourceList<Platform>
 
+    fun getPlatforms(offset: Int, max: Int): ApiResourceList<Platform>
+
     fun getPlatform(id: String): ApiResource<Platform>
 
     fun getProfile(): ApiResource<User>
