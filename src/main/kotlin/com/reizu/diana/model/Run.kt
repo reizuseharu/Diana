@@ -24,7 +24,7 @@ data class Run(
 
     val category: String,
 
-    val videos: Video,
+    val videos: Video?,
 
     val comment: String?,
 
