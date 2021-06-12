@@ -27,6 +27,7 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Path
+import retrofit2.http.Query
 import javax.inject.Singleton
 
 @Singleton
@@ -137,6 +138,9 @@ interface SpeedRunComService {
 
     @GET("runs/")
     fun getRuns(): Call<ApiResourceList<Run>>
+
+    @GET("runs")
+    fun getRuns(@Query("offset") offset: Int, @Query("max") max: Int, @Query("game") gameId: String, @Query("category") categoryId: String): Call<ApiResourceList<Run>>
 
     @GET("runs/{id}")
     fun getRun(@Path("id") id: String): Call<ApiResource<Run>>

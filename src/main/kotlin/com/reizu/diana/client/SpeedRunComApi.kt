@@ -96,6 +96,8 @@ interface SpeedRunComApi {
 
     fun getRuns(): ApiResourceList<Run>
 
+    fun getRuns(offset: Int, max: Int, gameId: String, categoryId: String): ApiResourceList<Run>
+
     fun getRun(id: String): ApiResource<Run>
 
     fun createRun(run: Run): ApiResource<Run>

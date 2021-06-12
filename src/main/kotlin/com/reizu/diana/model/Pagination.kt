@@ -8,8 +8,8 @@ data class Pagination(
 
     val size: Int,
 
-    val name: String,
+    val name: String?,
 
-    override val links: List<Link>
+    override val links: List<Link> = listOf()
 
 ): Linkable

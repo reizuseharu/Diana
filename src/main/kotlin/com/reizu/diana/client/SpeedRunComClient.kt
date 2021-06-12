@@ -162,6 +162,10 @@ class SpeedRunComClient @Inject constructor(private val service: SpeedRunComServ
         return service.getRuns().result()
     }
 
+    override fun getRuns(offset: Int, max: Int, gameId: String, categoryId: String): ApiResourceList<Run> {
+        return service.getRuns(offset, max, gameId, categoryId).result()
+    }
+
     override fun getRun(id: String): ApiResource<Run> {
         return service.getRun(id).result()
     }
